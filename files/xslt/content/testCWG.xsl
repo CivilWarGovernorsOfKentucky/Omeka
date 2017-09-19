@@ -242,39 +242,30 @@
    </milestone>
   </xsl:template>
 
-<!-- add a white space in empty cb so it doesn't wrap around other elements -->
-  <xsl:template match="tei:cb">
-    <xsl:variable name="num" select="@n" />
-   <cb>
-     <xsl:attribute name="n">
-       <xsl:value-of select="$num" />
-     </xsl:attribute>
-     <xsl:text> </xsl:text>
-   </cb>
-  </xsl:template>
-
   <!-- wrap content following cb elements in a div, with a class indicating the number of columns in the preceding milestone n attribute (if milestone n=2, then div class=column1of2 or div class=column2of2) -->
   <xsl:template match="tei:p[tei:cb]">
-        <xsl:apply-templates select="node()[not(preceding::tei:milestone)]" />
-        <xsl:apply-templates select="tei:note" />
-        <xsl:for-each select="tei:cb">
-          <xsl:variable name="count" select="position()" />
-          <div>
-            <xsl:variable name="numberofcolumns" select="preceding::tei:milestone[1]/@n" />
-            <xsl:variable name="n" select="@n" />
-            <xsl:attribute name="class"><xsl:text>column</xsl:text><xsl:value-of select="$n" /><xsl:text>of</xsl:text><xsl:value-of select="$numberofcolumns" /></xsl:attribute>
-            <xsl:apply-templates select="following-sibling::node()[preceding-sibling::tei:cb[1][@n=$n] and count(preceding-sibling::tei:cb)=$count and preceding::tei:milestone[1][@n>1] and not(self::tei:milestone)]" />
-          </div>
-        </xsl:for-each>
-       <xsl:apply-templates select="tei:milestone[@n=1]" />
+    <div>
+      <xsl:if test="preceding-sibling::tei:p[tei:cb]">
+        <xsl:attribute name="class">teip</xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates/>
+    </div>
+  </xsl:template>
+
+  <xsl:template match="tei:p/tei:cb">
+    <xsl:variable name="milenum" select="preceding::tei:milestone/@n" />
+    <xsl:variable name="className" select="concat('column', @n, 'of', $milenum)" />
+    <xsl:if test="not(@n = '1')"> <!-- if it's not the first, close the tag for the previous one -->
+      <xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+    </xsl:if>
+    <xsl:text disable-output-escaping="yes">&lt;</xsl:text>div class="<xsl:value-of select="$className"/>"<xsl:text disable-output-escaping="yes">&gt;</xsl:text>
   </xsl:template>
 
   <!-- wrap the nodes following the last milestone element in a div, with a class indicating the number of columns (if milestone n=1, then div class=column1) -->
-  <xsl:template match="tei:milestone[@n=1]">
-    <div>
-      <xsl:attribute name="class"><xsl:text>column1</xsl:text></xsl:attribute>
-      <!--<xsl:apply-templates select="following-sibling::node()" />-->
-    </div>
+  <xsl:template match="tei:milestone">
+    <xsl:if test="@n = '1' and preceding::tei:cb[@n]">
+      <xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="tei:pb">
@@ -286,6 +277,5 @@
 	<xsl:template match="eg:egXML//comment()">
 		<xsl:comment><xsl:value-of select="."/></xsl:comment>
 	</xsl:template>
-
 
 </xsl:stylesheet>

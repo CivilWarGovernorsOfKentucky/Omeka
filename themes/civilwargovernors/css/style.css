@@ -1353,16 +1353,17 @@
   #tei_wrapper {
     font-family: "georgia", serif;
   }
+  #tei_wrapper div.teip {
+    padding-top:20px;
+  }
   #tei_wrapper div.column1of2{
     width:50%;
     display:inline-block;
-    padding-bottom:20px;
     vertical-align: top;
   }
   #tei_wrapper div.column2of2 {
-    width:50%;
+    width:49%;
     display:inline-block;
-    padding-bottom:20px;
     vertical-align:top;
   }
   #tei_wrapper div.column1of3, #tei_wrapper div.column2of3, #tei_wrapper div.column3of3 {
