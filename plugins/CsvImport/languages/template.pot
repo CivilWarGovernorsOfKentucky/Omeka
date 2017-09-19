@@ -1,0 +1,505 @@
+# Translation for the Csv Import plugin for Omeka.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Omeka package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CsvImport\n"
+"Report-Msgid-Bugs-To: https://github.com/omeka/plugin-CsvImport/issues\n"
+"POT-Creation-Date: 2013-03-06 00:06+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Import Items"
+msgstr ""
+
+#: views/admin/index/browse.php:6 views/admin/index/browse.php:19
+msgid "Status"
+msgstr ""
+
+msgid "Queued"
+msgstr ""
+
+msgid "In Progress"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "Queued Undo"
+msgstr ""
+
+msgid "Undo In Progress"
+msgstr ""
+
+msgid "Completed Undo"
+msgstr ""
+
+msgid "Import Error"
+msgstr ""
+
+msgid "Undo Import Error"
+msgstr ""
+
+msgid "Other Error"
+msgstr ""
+
+msgid "Stopped"
+msgstr ""
+
+msgid "Paused"
+msgstr ""
+
+msgid "Started import."
+msgstr ""
+
+msgid "Cannot complete an import that is already completed."
+msgstr ""
+
+#, php-format
+msgid "Completed importing %1$s items (skipped %2$s items, %3$s rows)."
+msgstr ""
+
+msgid "Cannot complete an undo import that is already undone."
+msgstr ""
+
+msgid "Completed undoing the import."
+msgstr ""
+
+msgid "Cannot resume an import or undo import that has not been queued."
+msgstr ""
+
+msgid "Resumed import."
+msgstr ""
+
+msgid "Resumed undo import."
+msgstr ""
+
+msgid "Stopped import or undo import due to error."
+msgstr ""
+
+#, php-format
+msgid "Stopped import or undo import due to error: %s"
+msgstr ""
+
+msgid "Cannot queue an import that has an error."
+msgstr ""
+
+msgid "Cannot queue an import that has been stopped."
+msgstr ""
+
+msgid "Cannot queue an import that has been completed."
+msgstr ""
+
+msgid "Cannot queue an import that has been undone."
+msgstr ""
+
+msgid "Queued import."
+msgstr ""
+
+msgid "Cannot queue an undo import that has an undo import error."
+msgstr ""
+
+msgid "Cannot queue an undo import that has an error."
+msgstr ""
+
+msgid "Cannot queue an undo import that has been stopped."
+msgstr ""
+
+msgid "Cannot queue an undo import that has been undone."
+msgstr ""
+
+msgid "Queued undo import."
+msgstr ""
+
+msgid "Started undo import."
+msgstr ""
+
+#, php-format
+msgid "Running item import loop. Memory usage: %s"
+msgstr ""
+
+#, php-format
+msgid "Skipped item on row #%s"
+msgstr ""
+
+#, php-format
+msgid "Completed importing batch of %1$s items. Memory usage %2$s"
+msgstr ""
+
+#, php-format
+msgid ""
+"Completed undoing the import of a batch of %1$s items. Memory usage: %2$s"
+msgstr ""
+
+#, php-format
+msgid "Found similar items: %s"
+msgstr ""
+
+#, php-format
+msgid ""
+"Identifier Element Texts:\n"
+"%s"
+msgstr ""
+
+#, php-format
+msgid "Invalid file URL \"%1$s\": %2$s"
+msgstr ""
+
+#, php-format
+msgid "Could not import file \"%1$s\": %2$s"
+msgstr ""
+
+#, php-format
+msgid "Failed to remove file %s"
+msgstr ""
+
+#: models/CsvImport/File.php:99
+msgid "Please ensure that all column names are unique."
+msgstr ""
+
+#: models/CsvImport/File.php:103
+msgid ""
+"Please ensure that the CSV file is formatted correctly and contains the "
+"expected number of columns for each row."
+msgstr ""
+
+#: CsvImportPlugin.php:282 views/admin/index/index.php:2
+#: views/admin/index/map-columns.php:2 views/admin/index/logs.php:1
+#: views/admin/index/browse.php:2
+msgid "CSV Import"
+msgstr ""
+
+#: controllers/IndexController.php:36
+msgid "Invalid form input. Please see errors below and try again."
+msgstr ""
+
+#: controllers/IndexController.php:41
+msgid "Error uploading file. Please try again."
+msgstr ""
+
+#: controllers/IndexController.php:51
+msgid "Your file is incorrectly formatted."
+msgstr ""
+
+#: controllers/IndexController.php:100
+msgid "Import settings expired. Please try again."
+msgstr ""
+
+#: controllers/IndexController.php:121
+msgid "Invalid form input. Please try again."
+msgstr ""
+
+#: controllers/IndexController.php:127
+msgid "Please map at least one column to an element, file, or tag."
+msgstr ""
+
+#: controllers/IndexController.php:141 controllers/IndexController.php:259
+msgid "Import started. Reload this page for status updates."
+msgstr ""
+
+#: controllers/IndexController.php:143 controllers/IndexController.php:261
+msgid "Import could not be started. Please check error logs for more details."
+msgstr ""
+
+#: controllers/IndexController.php:179
+#, php-format
+msgid ""
+"Invalid column names. Column names must either be one of the following %s, "
+"or have the following format: {ElementSetName}:{ElementName}"
+msgstr ""
+
+#: controllers/IndexController.php:195
+#, php-format
+msgid "Element \"%s\" is not found in element set \"%s\""
+msgstr ""
+
+#: controllers/IndexController.php:287
+msgid "Undo import started. Reload this page for status updates."
+msgstr ""
+
+#: controllers/IndexController.php:289
+msgid ""
+"Undo import could not be started. Please check error logs for more details."
+msgstr ""
+
+#: controllers/IndexController.php:318
+msgid "Cleared import from the history."
+msgstr ""
+
+#: controllers/IndexController.php:320
+msgid "Cannot clear import history."
+msgstr ""
+
+#: forms/Mapping.php:56
+msgid "Import CSV File"
+msgstr ""
+
+#: forms/Main.php:36 forms/Main.php:50
+msgid "Select Item Type"
+msgstr ""
+
+#: forms/Main.php:39
+msgid "Use an export from Omeka CSV Report"
+msgstr ""
+
+#: forms/Main.php:40
+msgid "Selecting this will override the options below."
+msgstr ""
+
+#: forms/Main.php:44
+msgid "Automap Column Names to Elements"
+msgstr ""
+
+#: forms/Main.php:45
+msgid ""
+"Automatically maps columns to elements based on their column names. The "
+"column name must be in the form: <br/> {ElementSetName}:{ElementName}"
+msgstr ""
+
+#: forms/Main.php:54 forms/Main.php:57
+msgid "Select Collection"
+msgstr ""
+
+#: forms/Main.php:61
+msgid "Make All Items Public?"
+msgstr ""
+
+#: forms/Main.php:64
+msgid "Feature All Items?"
+msgstr ""
+
+#: forms/Main.php:67
+msgid "Remove local files after successful import?"
+msgstr ""
+
+#: forms/Main.php:81
+msgid "Next"
+msgstr ""
+
+#: forms/Main.php:124
+msgid "Choose Identifier Elements"
+msgstr ""
+
+#: forms/Main.php:125
+msgid ""
+"Those elements will be compared to detect if an item already exists in "
+"database. If an item already exists, it will be skipped."
+msgstr ""
+
+#: forms/Main.php:142
+msgid "comma"
+msgstr ""
+
+#: forms/Main.php:145
+msgid "semi-colon"
+msgstr ""
+
+#: forms/Main.php:148
+msgid "empty"
+msgstr ""
+
+#: forms/Main.php:162
+msgid "Choose Column Delimiter"
+msgstr ""
+
+#: forms/Main.php:163
+#, php-format
+msgid ""
+"A single character that will be used to separate columns in the file (%s by "
+"default). Note that spaces, tabs, and other whitespace are not accepted."
+msgstr ""
+
+#: forms/Main.php:174 forms/Main.php:182 forms/Main.php:184
+msgid "Column delimiter cannot be whitespace and must be one character long."
+msgstr ""
+
+#: forms/Main.php:199
+msgid "Choose File Delimiter"
+msgstr ""
+
+#: forms/Main.php:200
+#, php-format
+msgid ""
+"A single character that will be used to separate file paths or URLs within a "
+"cell (%s by default). If the delimiter is empty, then the whole text will be "
+"used as the file path or URL. Note that spaces, tabs, and other whitespace "
+"are not accepted."
+msgstr ""
+
+#: forms/Main.php:212 forms/Main.php:221 forms/Main.php:223
+msgid ""
+"File delimiter cannot be whitespace, and must be empty or one character long."
+msgstr ""
+
+#: forms/Main.php:238
+msgid "Choose Tag Delimiter"
+msgstr ""
+
+#: forms/Main.php:239
+#, php-format
+msgid ""
+"A single character that will be used to separate tags within a cell (%s by "
+"default). Note that spaces, tabs, and other whitespace are not accepted."
+msgstr ""
+
+#: forms/Main.php:250 forms/Main.php:258 forms/Main.php:260
+msgid "Tag delimiter cannot be whitespace and must be one character long."
+msgstr ""
+
+#: forms/Main.php:275
+msgid "Choose Element Delimiter"
+msgstr ""
+
+#: forms/Main.php:276
+#, php-format
+msgid ""
+"A single character that will be used to separate metadata elements within a "
+"cell (%s by default). If the delimiter is empty, then the whole text will be "
+"used as the element text. Note that spaces, tabs, and other whitespace are "
+"not accepted."
+msgstr ""
+
+#: forms/Main.php:288 forms/Main.php:297 forms/Main.php:299
+msgid ""
+"Element delimiter cannot be whitespace, and must be empty or one character "
+"long."
+msgstr ""
+
+#: forms/Main.php:333
+msgid "Upload CSV File"
+msgstr ""
+
+#: forms/Main.php:337
+#, php-format
+msgid "Maximum file size is %s."
+msgstr ""
+
+#: forms/Main.php:351
+#, php-format
+msgid ""
+"The file you have uploaded exceeds the maximum post size allowed by the "
+"server. Please upload a file smaller than %s."
+msgstr ""
+
+#: views/admin/index/check-omeka-csv.php:2
+msgid "CSV Import Errors"
+msgstr ""
+
+#: views/admin/index/check-omeka-csv.php:7
+msgid ""
+"The following problems were found with your CSV file and Omeka installation."
+msgstr ""
+
+#: views/admin/index/check-omeka-csv.php:10
+msgid ""
+"Usually, these are the result of the elements in your Omeka.net site not "
+"having \n"
+"    corresponding elements in this installation of Omeka. Either the Dublin "
+"Core Extended plugin is not \n"
+"    installed, or you created custom item type elements in Omeka.net, but "
+"have not yet created them here."
+msgstr ""
+
+#: views/admin/index/check-omeka-csv.php:14
+msgid "Please correct the errors, then try your import again."
+msgstr ""
+
+#: views/admin/index/index.php:7
+msgid "Step 1: Select File and Item Settings"
+msgstr ""
+
+#: views/admin/index/map-columns.php:6
+msgid "Step 2: Map Columns To Elements, Tags, or Files"
+msgstr ""
+
+#: views/admin/index/logs.php:6
+#, php-format
+msgid "Logs for import #%s"
+msgstr ""
+
+#: views/admin/index/logs.php:14
+msgid "Time"
+msgstr ""
+
+#: views/admin/index/logs.php:15
+msgid "Priority"
+msgstr ""
+
+#: views/admin/index/logs.php:16
+msgid "Message"
+msgstr ""
+
+#: views/admin/index/logs.php:82
+msgid "You have no logs yet."
+msgstr ""
+
+#: views/admin/index/map-columns-form.php:9
+msgid "Column"
+msgstr ""
+
+#: views/admin/index/map-columns-form.php:10
+msgid "Example from CSV File"
+msgstr ""
+
+#: views/admin/index/map-columns-form.php:11
+msgid "Map To Element"
+msgstr ""
+
+#: views/admin/index/map-columns-form.php:12
+msgid "Use HTML?"
+msgstr ""
+
+#: views/admin/index/map-columns-form.php:13
+msgid "Tags?"
+msgstr ""
+
+#: views/admin/index/map-columns-form.php:14
+msgid "Files?"
+msgstr ""
+
+#: views/admin/index/browse.php:14
+msgid "Import Date"
+msgstr ""
+
+#: views/admin/index/browse.php:15
+msgid "CSV File"
+msgstr ""
+
+#: views/admin/index/browse.php:16
+msgid "Imported Items"
+msgstr ""
+
+#: views/admin/index/browse.php:17
+msgid "Skipped Items"
+msgstr ""
+
+#: views/admin/index/browse.php:18
+msgid "Skipped Rows"
+msgstr ""
+
+#: views/admin/index/browse.php:20
+msgid "Action"
+msgstr ""
+
+#: views/admin/index/browse.php:53
+msgid "Undo Import"
+msgstr ""
+
+#: views/admin/index/browse.php:55
+msgid "Logs"
+msgstr ""
+
+#: views/admin/index/browse.php:67
+msgid "Clear History"
+msgstr ""
+
+#: views/admin/index/browse.php:77
+msgid "You have no imports yet."
+msgstr ""
