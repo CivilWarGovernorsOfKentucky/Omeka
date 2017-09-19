@@ -86,7 +86,7 @@ function dropboxTEI_validate_file($fileName)
 function render_tei_file($filename){
 
 	//query for file-specific stylesheet and display_type. use default from option table if NULL
-	$stylesheet = "http://discovery.civilwargovernors.org/files/xslt/content/testCWG.xsl";//tei_display_local_stylesheet($file_id);
+	$stylesheet = "http://$_SERVER[HTTP_HOST]/files/xslt/content/testCWG.xsl";//tei_display_local_stylesheet($file_id);
 	//$displayType = tei_display_local_display($file_id);
 
 	$xp = new XsltProcessor();
@@ -104,7 +104,7 @@ function render_tei_file($filename){
 	// create a DOM document and load the XML data
 	$xml_doc = new DomDocument;
 
-  $filepath = "http://discovery.civilwargovernors.org/files/original/$filename";
+  $filepath = "http://$_SERVER[HTTP_HOST]/files/original/$filename";
 	$xml_doc->load($filepath);
 
 	try {
