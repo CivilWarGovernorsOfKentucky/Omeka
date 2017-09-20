@@ -1367,17 +1367,30 @@
     vertical-align:top;
   }
   #tei_wrapper div.column1of3, #tei_wrapper div.column2of3, #tei_wrapper div.column3of3 {
-    width:30%;
+    width:33%;
     display:inline-block;
-    padding-bottom:20px;
     vertical-align: top;
   }
-  #tei_wrapper div.column1of5, #tei_wrapper div.column2of5, #tei_wrapper div.column3of5, #tei_wrapper div.column4of5, #tei_wrapper div.column5of5 {
+
+  #tei_wrapper div.column1of4, #tei_wrapper div.column2of4, #tei_wrapper div.column3of4, #tei_wrapper div.column4of4 {
+    width:24%;
+    display:inline-block;
+    vertical-align: top;
+  }
+
+  #tei_wrapper div.column1of5, #tei_wrapper div.column2of5, #tei_wrapper div.column3of5, #tei_wrapper div.column4of5 {
     width:20%;
     display:inline-block;
     padding-bottom:20px;
     vertical-align: top;
   }
+  #tei_wrapper div.column5of5 {
+    width:19%;
+    display:inline-block;
+    padding-bottom:20px;
+    vertical-align: top;
+  }
+
   #tei_wrapper div.column1 {
     clear:both;
   }

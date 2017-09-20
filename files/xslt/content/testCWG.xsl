@@ -244,12 +244,19 @@
 
   <!-- wrap content following cb elements in a div, with a class indicating the number of columns in the preceding milestone n attribute (if milestone n=2, then div class=column1of2 or div class=column2of2) -->
   <xsl:template match="tei:p[tei:cb]">
-    <div>
-      <xsl:if test="preceding-sibling::tei:p[tei:cb]">
-        <xsl:attribute name="class">teip</xsl:attribute>
-      </xsl:if>
-      <xsl:apply-templates/>
-    </div>
+    <xsl:choose>
+      <xsl:when test="count(tei:cb) = number(tei:cb/preceding::tei:milestone/@n)">
+        <div>
+          <xsl:if test="preceding-sibling::tei:p[tei:cb]">
+            <xsl:attribute name="class">teip</xsl:attribute>
+          </xsl:if>
+          <xsl:apply-templates/>
+        </div>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates/>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="tei:p/tei:cb">
