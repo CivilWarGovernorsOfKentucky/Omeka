@@ -7,10 +7,15 @@
   <!-- pdf viewer -->
   <!-- The following returns all of the files associated with an item. -->
   <!-- xml file link is hidden in the stylesheet -->
-  <?php if (metadata('item', 'has files')): ?>
-  <div id="itemfiles" class="element">
-      <div class="element-text"><?php echo files_for_item(); ?></div>
-  </div>
+
+  <?php if (metadata('item', 'item_type_name') == 'CWGK Early Access Document'): ?>
+    <?php if (metadata('item', 'has files')): ?>
+    <div id="itemfiles" class="element">
+        <div class="element-text"><?php echo files_for_item(); ?></div>
+    </div>
+    <?php endif; ?>
+  <?php elseif (metadata('item', 'item_type_name') == 'Person'): ?>
+    <?php include 'network.php' ?>
   <?php endif; ?>
 
   <!-- tabs -->
@@ -29,6 +34,7 @@
         <div id="item-citation" class="element">
             <!--<div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>-->
             <div class="element-text">
+              <?php if (metadata('item', 'item_type_name') == 'CWGK Early Access Document'): ?>
                 <?php echo metadata('item', array('CWG Documents', 'Document Title')); ?>,&nbsp;
                 <?php echo metadata('item', array('CWG Documents', 'Date of Creation')); ?>,&nbsp;
                 <?php echo metadata('item', array('CWG Documents', 'Collection')); ?>,&nbsp;
@@ -39,12 +45,12 @@
                 Accessed via the <em>Civil War Governors of Kentucky Digital Documentary Edition: Early Access</em>,
                 discovery.civilwargovernors.org/document/<?php echo metadata('item', array('CWG Documents', 'Accession Number')); ?>,
                 (accessed <?php echo date('F j, Y'); ?>).
+              <?php endif ?>
             </div>
         </div>
       </div>
       <div id="tabs-down" class="element-text">
         <?php $identifier = metadata('item', array('Dublin Core', 'Identifier')); ?>
-
       <script>
         // ajax call to create branded pdf for download
         jQuery(document).ready(function(){
@@ -83,14 +89,6 @@
       </div>
     </div>
     <div class="browse-divider"><hr class="star" /></div>
-
-
-
-
-
-
-
-
 
 </div><!-- end primary -->
 
