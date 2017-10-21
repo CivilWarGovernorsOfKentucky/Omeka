@@ -23,3 +23,5 @@ files/*
 !files/xslt/
 application/logs
 db.ini
+
+.idea
