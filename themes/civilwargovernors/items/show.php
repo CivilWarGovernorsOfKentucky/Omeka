@@ -14,7 +14,7 @@
         <div class="element-text"><?php echo files_for_item(); ?></div>
     </div>
     <?php endif; ?>
-  <?php elseif (metadata('item', 'item_type_name') == 'Person'): ?>
+  <?php elseif (metadata('item', 'item_type_name') == 'CWGK Person'): ?>
     <?php include 'network.php' ?>
   <?php endif; ?>
 
