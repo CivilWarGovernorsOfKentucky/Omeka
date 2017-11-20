@@ -158,19 +158,36 @@
         <!-- Document. -->
         <div class="result">
 
-          <!-- Thumbnail. --> <!-- TODO: entity items -->
+          <!-- Thumbnail. -->
           <?php if (metadata('item', 'has files')):
 
             foreach($item->Files as $file){
               if($file['mime_type']=='application/pdf' && $file['has_derivative_image']==1){
-
                 ?>
                 <div class="item-img">
                   <?php  echo file_image('square_thumbnail', array(), $file); ?>
                 </div>
             <?php  }
+              else {
+                if (metadata('item', 'item_type_name') == 'CWGK Person') { ?>
+                  <div class="item-img">
+                    <img src="<?php echo("http://$_SERVER[HTTP_HOST]/themes/civilwargovernors/images/N_icon_KY.png") ?>"/>
+                  </div>
+                <?php } else if (metadata('item', 'item_type_name') == 'CWGK Organization') { ?>
+                  <div class="item-img">
+                    <img src="<?php echo("http://$_SERVER[HTTP_HOST]/themes/civilwargovernors/images/O_icon_KY.png") ?>"/>
+                  </div>
+                <?php } else if (metadata('item', 'item_type_name') == 'CWGK Place') { ?>
+                  <div class="item-img">
+                    <img src="<?php echo("http://$_SERVER[HTTP_HOST]/themes/civilwargovernors/images/P_icon_KY.png") ?>"/>
+                  </div>
+                <?php } else if (metadata('item', 'item_type_name') == 'CWGK Geographical Feature') { ?>
+                  <div class="item-img">
+                    <img src="<?php echo("http://$_SERVER[HTTP_HOST]/themes/civilwargovernors/images/G_icon_KY.png") ?>"/>
+                  </div>
+            <?php }
+              }
             }
-
           endif; ?>
 
           <!-- Header. -->
