@@ -1,5 +1,5 @@
 <?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'items show')); ?>
-
+<?php $entity_item_types = array("CWGK Person", "CWGK Organization", "CWGK Place", "CWGK Geographical Feature"); ?>
 <h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
 <div class="browse-divider"><hr class="star" /></div>
 <div id="primary">
@@ -14,7 +14,7 @@
         <div class="element-text"><?php echo files_for_item(); ?></div>
     </div>
     <?php endif; ?>
-  <?php elseif (metadata('item', 'item_type_name') == 'CWGK Person'): ?>
+  <?php elseif (in_array(metadata('item', 'item_type_name'), $entity_item_types)): ?>
     <?php include 'network.php' ?>
   <?php endif; ?>
 

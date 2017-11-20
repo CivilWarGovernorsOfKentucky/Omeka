@@ -2,6 +2,9 @@
 $blacklists = array();
 $blacklists['CWG Documents'] = array("Document Title", "Source Country", "Source State", "Source City", "ISO Date of Creation", "DocTracker Number", "Transcription");
 $blacklists['CWGK Person Item Type Metadata'] = array("Name", "Bibliography", "Biographical Text");
+$blacklists['CWGK Organization Item Type Metadata'] = array("Name", "Bibliography", "Biographical Text");
+$blacklists['CWGK Place Item Type Metadata'] = array("Name", "Bibliography", "Biographical Text");
+$blacklists['CWGK Geographical Feature Item Type Metadata'] = array("Name", "Bibliography", "Biographical Text");
 ?>
 <?php foreach ($elementsForDisplay as $setName => $setElements): ?>
   <div class="element-set">

@@ -158,7 +158,7 @@
         <!-- Document. -->
         <div class="result">
 
-          <!-- Thumbnail. -->
+          <!-- Thumbnail. --> <!-- TODO: entity items -->
           <?php if (metadata('item', 'has files')):
 
             foreach($item->Files as $file){
@@ -175,7 +175,7 @@
 
           <!-- Header. -->
           <div class="result-header">
-
+            <!-- TODO: Customize for entities -->
             <!-- Record URL. -->
             <?php $url = SolrSearch_Helpers_View::getDocumentUrl($doc); ?>
 

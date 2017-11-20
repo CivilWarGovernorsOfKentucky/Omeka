@@ -76,7 +76,7 @@ d3.json("http://test.mashbill.discovery.civilwargovernors.org/entities/data/<?ph
        .on("mouseover", function(d) {
        div.transition()
          .style("opacity", .9);
-       div.html("<a href=\"" + d.link + "\">" + d.id + "<\a><br>" + d.bio)
+       div.html("<a href='<?php echo("http://$_SERVER[HTTP_HOST]/documents/") ?>" + d.id + "'>" + d.id + "<\a><br>" + d.bio)
          .style("left", (d3.event.pageX) + "px")
          .style("top", (d3.event.pageY - 28) + "px");
        })
