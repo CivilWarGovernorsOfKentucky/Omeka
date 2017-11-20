@@ -14,9 +14,18 @@
         <div class="element-text"><?php echo files_for_item(); ?></div>
     </div>
     <?php endif; ?>
-  <?php elseif (in_array(metadata('item', 'item_type_name'), $entity_item_types)): ?>
-    <?php include 'network.php' ?>
   <?php endif; ?>
+  <?php if (metadata('item', 'item_type_name') == 'CWGK Person' || metadata('item', 'item_type_name') == 'CWGK Organization') { ?>
+    <?php include 'network.php' ?>
+  <?php } elseif (metadata('item', 'item_type_name') == 'CWGK Place') { ?>
+        <div id="itemfiles" class="element">
+          <div class="element-text"><img src="<?php echo("http://$_SERVER[HTTP_HOST]/themes/civilwargovernors/images/P_icon_KY.png") ?>"/></div>
+        </div>
+  <?php } elseif (metadata('item', 'item_type_name') == 'CWGK Geographical Feature') { ?>
+        <div id="itemfiles" class="element">
+          <div class="element-text"><img src="<?php echo("http://$_SERVER[HTTP_HOST]/themes/civilwargovernors/images/G_icon_KY.png") ?>"/></div>
+        </div>
+  <?php } ?>
 
   <!-- tabs -->
   <div id="tabs">
