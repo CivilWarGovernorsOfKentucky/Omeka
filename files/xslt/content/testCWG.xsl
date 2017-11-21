@@ -285,7 +285,7 @@
 		<xsl:comment><xsl:value-of select="."/></xsl:comment>
 	</xsl:template>
 
-  <xsl:template match="tei:persName">
+  <xsl:template match="tei:persName | tei:orgName | tei:placeName ">
     <a href="{substring(@ref, 6)}"><xsl:value-of select='.'/></a>
   </xsl:template>
 
