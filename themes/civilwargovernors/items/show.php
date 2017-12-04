@@ -59,41 +59,41 @@
         </div>
       </div>
       <div id="tabs-down" class="element-text">
-        <?php $identifier = metadata('item', array('Dublin Core', 'Identifier')); ?>
-      <script>
-        // ajax call to create branded pdf for download
-        jQuery(document).ready(function(){
-            jQuery('#pdfform').submit(function(event){
+      <?php $identifier = metadata('item', array('Dublin Core', 'Identifier')); ?>
+      <?php if (metadata('item', 'item_type_name') == 'CWGK Early Access Document'): ?>
+        <script>
+          // ajax call to create branded pdf for download
+          jQuery(document).ready(function(){
+              jQuery('#pdfform').submit(function(event){
 
-              var identifier = jQuery("#identifier").val();
-              var parameters = { identifier : identifier};
+                var identifier = jQuery("#identifier").val();
+                var parameters = { identifier : identifier};
 
-             jQuery.ajax({
-                url: 'http://tcpdf.discovery.civilwargovernors.org/createpdf.php',
-                data: parameters,
+              jQuery.ajax({
+                  url: 'http://tcpdf.discovery.civilwargovernors.org/createpdf.php',
+                  data: parameters,
 
-                dataType: 'text'
-              })
+                  dataType: 'text'
+                })
 
-              .done(function(data) {
-                  window.open(
-                    data,
-                  '_blank' );
+                .done(function(data) {
+                    window.open(
+                      data,
+                    '_blank' );
 
+                });
+
+                // don't reload the page
+                event.preventDefault();
               });
-
-              // don't reload the page
-              event.preventDefault();
             });
-          });
-        </script>
+          </script>
 
-        <form id="pdfform" action="http://tcpdf.discovery.civilwargovernors.org/createpdf.php" method="get">
-          <input id="identifier" type="hidden" value="<?php echo $identifier; ?>" name="identifier" />
-          <input id="brandPDF" type="submit"  class="btn-success" value="Download PDF" onClick="ga('send', 'event', 'Download PDF', '<?php echo $identifier; ?>')"/>
-        </form>
-
-
+          <form id="pdfform" action="http://tcpdf.discovery.civilwargovernors.org/createpdf.php" method="get">
+            <input id="identifier" type="hidden" value="<?php echo $identifier; ?>" name="identifier" />
+            <input id="brandPDF" type="submit"  class="btn-success" value="Download PDF" onClick="ga('send', 'event', 'Download PDF', '<?php echo $identifier; ?>')"/>
+          </form>
+        <?php endif ?>  
         <div id="downloadXML"><a onClick="ga('send', 'event', 'Download XML', '<?php echo $identifier; ?>')" href="/files/xml/<?php echo $identifier;?>.xml" target="_blank" >Download XML</a></div>
       </div>
     </div>
