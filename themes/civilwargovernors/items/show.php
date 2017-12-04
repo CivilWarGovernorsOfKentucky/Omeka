@@ -1,5 +1,6 @@
 <?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'items show')); ?>
 <?php $entity_item_types = array("CWGK Person", "CWGK Organization", "CWGK Place", "CWGK Geographical Feature"); ?>
+<?php $identifier = metadata('item', array('Dublin Core', 'Identifier')); ?>
 <h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
 <div class="browse-divider"><hr class="star" /></div>
 <div id="primary">
@@ -41,6 +42,7 @@
       <div id="tabs-cite">
         <!-- The following prints a citation for this item. -->
         <div id="item-citation" class="element">
+          <?php if (metadata('item', 'item_type_name') == 'CWGK Early Access Document') { ?>
             <!--<div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>-->
             <div class="element-text">
               <?php if (metadata('item', 'item_type_name') == 'CWGK Early Access Document'): ?>
@@ -56,10 +58,15 @@
                 (accessed <?php echo date('F j, Y'); ?>).
               <?php endif ?>
             </div>
+          <?php } else { ?>
+            <div class="element-text">
+              "<?php echo metadata('item', array('Dublin Core', 'Title')); ?>" in the <em>Civil War Governors of Kentucky Digital Documentary Edition</em>,
+              discovery.civilwargovernors.org/document/<?php echo $identifier; ?>, (accessed <?php echo date('F j, Y'); ?>). 
+            </div>
+          <?php } ?>
         </div>
       </div>
       <div id="tabs-down" class="element-text">
-      <?php $identifier = metadata('item', array('Dublin Core', 'Identifier')); ?>
       <?php if (metadata('item', 'item_type_name') == 'CWGK Early Access Document'): ?>
         <script>
           // ajax call to create branded pdf for download
@@ -112,7 +119,7 @@
                <br />
                <div class="browse-divider"><hr class="star" /></div>
                <br />
-               <p><em>Early Access</em> is a work in progress. Help us improve our edition by suggesting a correction for this document. <div class="correction button"><a href='<?php echo url('contact'); ?>?document_id=<?php echo $identifier; ?>&document_title=<?php echo urlencode(metadata('item', array('Dublin Core', 'Title'))); ?>'>Suggest a correction</a></div></p>
+               <p><em>Civil War Governors of Kentucky</em> is always evolving. Help us improve the edition by suggesting a correction or addition to this record. <div class="correction button"><a href='<?php echo url('contact'); ?>?document_id=<?php echo $identifier; ?>&document_title=<?php echo urlencode(metadata('item', array('Dublin Core', 'Title'))); ?>'>Suggest a correction</a></div></p>
 
      <?php  }
 
