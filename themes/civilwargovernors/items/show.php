@@ -19,11 +19,11 @@
     <?php include 'network.php' ?>
   <?php } elseif (metadata('item', 'item_type_name') == 'CWGK Place') { ?>
         <div id="itemfiles" class="element">
-          <div class="element-text"><img src="<?php echo("http://$_SERVER[HTTP_HOST]/themes/civilwargovernors/images/P_icon_KY.png") ?>"/></div>
+          <div class="element-text"><img src="<?php echo("http://$_SERVER[HTTP_HOST]/themes/civilwargovernors/images/P_icon_KY.png") ?>" width="100%" height="auto"/></div>
         </div>
   <?php } elseif (metadata('item', 'item_type_name') == 'CWGK Geographical Feature') { ?>
         <div id="itemfiles" class="element">
-          <div class="element-text"><img src="<?php echo("http://$_SERVER[HTTP_HOST]/themes/civilwargovernors/images/G_icon_KY.png") ?>"/></div>
+          <div class="element-text"><img src="<?php echo("http://$_SERVER[HTTP_HOST]/themes/civilwargovernors/images/G_icon_KY.png") ?>" width="100%" height="auto"/></div>
         </div>
   <?php } ?>
 
