@@ -25,22 +25,41 @@
   padding: 2px;
   font: 8px sans-serif;
 }
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 </style>
-
-<svg width="580" height="600"></svg>
+<div id="network-container" class="svg-container">
+</div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.min.js"></script>
 <script>
+var container = d3.select("div#network-container"), 
+    width = container.node().clientWidth,
+    height = container.node().clientHeight;
+
+var svg = d3.select("div#network-container")
+  .append("svg")
+  .attr("preserveAspectRatio", "xMinYMin meet")
+  .attr("viewBox", "0 0 " + width + " " + height)
+  .classed("svg-content", true);
 
 var div = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
-
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
 
 var color = d3.scaleOrdinal(d3.schemeCategory20).domain(["central node", "document", "person", "place", "organization", "familial", "political", "legal", "economic", "social", "military", "slavery"]);
 
