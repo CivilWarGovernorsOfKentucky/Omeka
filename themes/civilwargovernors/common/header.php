@@ -13,7 +13,7 @@
     }
     $titleParts[] = option('site_title');
     ?>
-    <title><?php echo implode(' &middot; ', $titleParts); ?></title>
+    <title><?php echo str_replace(': Early Access', ' Digital Documentary Edition', implode(' &middot; ', $titleParts)); ?></title>
 
     <?php echo auto_discovery_link_tags(); ?>
 
