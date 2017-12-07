@@ -33,6 +33,9 @@
       <ul>
         <li><a href="#tabs-meta">Metadata</a></li>
         <li><a href="#tabs-cite">Citation</a></li>
+        <?php if (in_array(metadata('item', 'item_type_name'), $entity_item_types)): ?>
+        <li><a href="#tabs-documents">Documents</a></li>
+        <?php endif ?>
         <li><a href="#tabs-down">Download</a></li>
       </ul>
       <div id="tabs-meta">
@@ -66,6 +69,23 @@
           <?php } ?>
         </div>
       </div>
+      <?php if (in_array(metadata('item', 'item_type_name'), $entity_item_types)): ?>
+      <div id="tabs-documents">
+        <ul id='entity-document-list'></ul>
+        <script>
+          jQuery(document).ready(function() {
+            jQuery.ajax({
+              url: "http://test.mashbill.discovery.civilwargovernors.org/entities/show_documents/<?php echo $identifier;?>",
+              crossDomain: true
+            }).done(function(data) {
+              data.forEach (function(cwgk_doc) {
+                jQuery('#entity-document-list').append("<li><a href='<?php echo "http://$_SERVER[HTTP_HOST]/document/"?>" + cwgk_doc.cwgk_id + "'>" + cwgk_doc.cwgk_id + "</a></li>")
+              });
+            });
+          });
+        </script>
+      </div>
+      <?php endif ?>
       <div id="tabs-down" class="element-text">
       <?php if (metadata('item', 'item_type_name') == 'CWGK Early Access Document'): ?>
         <script>
