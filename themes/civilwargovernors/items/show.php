@@ -136,11 +136,10 @@
             $ext = pathinfo($filename, PATHINFO_EXTENSION);
             if ($ext == "xml") {
                echo get_specific_plugin_hook_output("DropboxTEI", "public_items_show", $filename); ?>
-               <br />
-               <div class="browse-divider"><hr class="star" /></div>
-               <br />
-               <p><em>Civil War Governors of Kentucky</em> is always evolving. Help us improve the edition by suggesting a correction or addition to this record. <div class="correction button"><a href='<?php echo url('contact'); ?>?document_id=<?php echo $identifier; ?>&document_title=<?php echo urlencode(metadata('item', array('Dublin Core', 'Title'))); ?>'>Suggest a correction</a></div></p>
-
+               <br/>
+               <div class="correction button">
+                <a href='<?php echo url('contact'); ?>?document_id=<?php echo $identifier; ?>&document_title=<?php echo urlencode(metadata('item', array('Dublin Core', 'Title'))); ?>'>Suggest a correction</a>
+               </div>
      <?php  }
 
           }

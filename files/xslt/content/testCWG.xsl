@@ -32,12 +32,27 @@
   <xsl:key name="ids" match="//*" use="@xml:id"/>
 
 	<xsl:template match="/" name="htmlShell" priority="99">
-
-
-				<div id="tei_wrapper">
-					<xsl:apply-templates/>
-				</div>
-
+    <div id="tei_wrapper">
+      <xsl:apply-templates/>
+      <br />
+      <div class="browse-divider"><hr class="star" /></div>
+      <br />
+      <xsl:choose>
+        <xsl:when test="starts-with(/tei:TEI/@xml:id, 'KYR')">
+          <xsl:choose>
+            <xsl:when test="//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:respStmt/tei:resp[@n='proof_2']">
+              <p><em>Civil War Governors of Kentucky</em> is always evolving. Help us improve the edition by suggesting a correction or addition to this record. </p>
+            </xsl:when>
+            <xsl:otherwise>
+              <p><em>Early Access</em> is a work in progress. Help us improve our edition by suggesting a correction for this document. </p>
+            </xsl:otherwise>
+          </xsl:choose>              
+        </xsl:when>
+        <xsl:otherwise>
+          <p><em>Civil War Governors of Kentucky</em> is always evolving. Help us improve the edition by suggesting a correction or addition to this record. </p>
+        </xsl:otherwise>
+      </xsl:choose>
+    </div>
 	</xsl:template>
 
   <xsl:template match="@*">
