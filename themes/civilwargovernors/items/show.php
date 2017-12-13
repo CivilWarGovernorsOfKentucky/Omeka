@@ -9,7 +9,7 @@
   <!-- The following returns all of the files associated with an item. -->
   <!-- xml file link is hidden in the stylesheet -->
 
-  <?php if (metadata('item', 'item_type_name') == 'CWGK Early Access Document'): ?>
+  <?php if (metadata('item', 'item_type_name') == 'CWGK Document'): ?>
     <?php if (metadata('item', 'has files')): ?>
     <div id="itemfiles" class="element">
         <div class="element-text"><?php echo files_for_item(); ?></div>
@@ -45,10 +45,10 @@
       <div id="tabs-cite">
         <!-- The following prints a citation for this item. -->
         <div id="item-citation" class="element">
-          <?php if (metadata('item', 'item_type_name') == 'CWGK Early Access Document') { ?>
+          <?php if (metadata('item', 'item_type_name') == 'CWGK Document') { ?>
             <!--<div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>-->
             <div class="element-text">
-              <?php if (metadata('item', 'item_type_name') == 'CWGK Early Access Document'): ?>
+              <?php if (metadata('item', 'item_type_name') == 'CWGK Document'): ?>
                 <?php echo metadata('item', array('CWG Documents', 'Document Title')); ?>,&nbsp;
                 <?php echo metadata('item', array('CWG Documents', 'Date of Creation')); ?>,&nbsp;
                 <?php echo metadata('item', array('CWG Documents', 'Collection')); ?>,&nbsp;
@@ -87,7 +87,7 @@
       </div>
       <?php endif ?>
       <div id="tabs-down" class="element-text">
-      <?php if (metadata('item', 'item_type_name') == 'CWGK Early Access Document'): ?>
+      <?php if (metadata('item', 'item_type_name') == 'CWGK Document'): ?>
         <script>
           // ajax call to create branded pdf for download
           jQuery(document).ready(function(){
